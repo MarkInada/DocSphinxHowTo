@@ -2,4 +2,4 @@
 
 **下のURLをクリック！**
 
-https://MarkInada.github.io/DocSphinxHowTo
+https://markinada.github.io/DocSphinxHowTo/
