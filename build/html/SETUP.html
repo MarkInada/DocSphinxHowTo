@@ -91,8 +91,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#buildhtml">5. Buildしてhtml生成</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id4">5-1. ビルド設定</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">5-2. Sphinxプロジェクトの読み込み</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">5-1. Sphinxプロジェクトの読み込み</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">5-2. ビルド設定</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id6">5-3. ビルドしてみる</a></li>
 </ul>
 </li>
@@ -103,6 +103,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id8">7. ドキュメントを書いてみる</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#github">8. GitHubで作成したドキュメントを公開</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id9">引用した資料たち</a></li>
 </ul>
 </li>
@@ -232,7 +233,7 @@ sphinx-quickstart <span class="m">1</span>.7.4
 <h2>3. Eclipseのインストール<a class="headerlink" href="#eclipse" title="Permalink to this headline">¶</a></h2>
 <p>この時点で、テキストエディタとコマンドプロンプトでSphinxのドキュメント作成を行うことは可能。
 しかし、もう少し我慢して一手間かけて統合開発環境 Eclipseで快適な環境にしよう。
-Eclipseのインストール⇒リンク （初期設定までは行おう。）</p>
+Eclipseのインストールして初期設定までは行おう⇒手順リンク(<a class="reference external" href="https://github.com/MarkInada/DocEclipseHowTo">https://github.com/MarkInada/DocEclipseHowTo</a>)</p>
 </div>
 <div class="section" id="id2">
 <h2>4. Eclipseの設定<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
@@ -256,7 +257,17 @@ Eclipseのインストール⇒リンク （初期設定までは行おう。）
 <div class="section" id="buildhtml">
 <h2>5. Buildしてhtml生成<a class="headerlink" href="#buildhtml" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id4">
-<h3>5-1. ビルド設定<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3>5-1. Sphinxプロジェクトの読み込み<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>File -&gt; New -&gt; Other から、以下のようにプロジェクトを読み込む</p>
+<a class="reference internal image-reference" href="_images/New1.png"><img alt="_images/New1.png" class="align-center" src="_images/New1.png" style="width: 515.0px; height: 495.0px;" /></a>
+<a class="reference internal image-reference" href="_images/New2.png"><img alt="_images/New2.png" class="align-center" src="_images/New2.png" style="width: 517.0px; height: 497.0px;" /></a>
+<a class="reference internal image-reference" href="_images/New3.png"><img alt="_images/New3.png" class="align-center" src="_images/New3.png" style="width: 520.0px; height: 498.0px;" /></a>
+<p>最後にconf.pyとindex.rstをsourceディレクトリ内に移動し、上書きする。
+※注意！！　すでにsourceディレクトリにconf.pyとindex.rstがある状態で読み込みをこれらが初期化されてしまいます！</p>
+<a class="reference internal image-reference" href="_images/ChangeSouce.png"><img alt="_images/ChangeSouce.png" class="align-center" src="_images/ChangeSouce.png" style="width: 366.0px; height: 190.0px;" /></a>
+</div>
+<div class="section" id="id5">
+<h3>5-2. ビルド設定<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>Run -&gt; Run Configurationsを開き、”Sphinx (via make file)”から”new configuration”を選択し、下記のように入力する。</p>
 <a class="reference internal image-reference" href="_images/RunConf.png"><img alt="_images/RunConf.png" class="align-center" src="_images/RunConf.png" style="width: 859.0px; height: 711.0px;" /></a>
 <p>環境変数をEclipseにロードさせてビルド設定は終了。コマンドプロンプトで”PATH”をテキストに書き出し、その内容をEnviornmentに追加する。</p>
@@ -264,15 +275,6 @@ Eclipseのインストール⇒リンク （初期設定までは行おう。）
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/RunConfPath.png"><img alt="_images/RunConfPath.png" class="align-center" src="_images/RunConfPath.png" style="width: 846.0px; height: 578.0px;" /></a>
-</div>
-<div class="section" id="id5">
-<h3>5-2. Sphinxプロジェクトの読み込み<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<p>File -&gt; New -&gt; Other から、以下のようにプロジェクトを読み込む</p>
-<a class="reference internal image-reference" href="_images/New1.png"><img alt="_images/New1.png" class="align-center" src="_images/New1.png" style="width: 515.0px; height: 495.0px;" /></a>
-<a class="reference internal image-reference" href="_images/New2.png"><img alt="_images/New2.png" class="align-center" src="_images/New2.png" style="width: 517.0px; height: 497.0px;" /></a>
-<a class="reference internal image-reference" href="_images/New3.png"><img alt="_images/New3.png" class="align-center" src="_images/New3.png" style="width: 520.0px; height: 498.0px;" /></a>
-<p>最後にconf.pyとindex.rstをsourceディレクトリ内に移動し、上書きする。</p>
-<a class="reference internal image-reference" href="_images/ChangeSouce.png"><img alt="_images/ChangeSouce.png" class="align-center" src="_images/ChangeSouce.png" style="width: 366.0px; height: 190.0px;" /></a>
 </div>
 <div class="section" id="id6">
 <h3>5-3. ビルドしてみる<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
@@ -331,6 +333,23 @@ Eclipseのインストール⇒リンク （初期設定までは行おう。）
 <p>Run(ビルド)してhtmlファイルを開くと・・・・。</p>
 <a class="reference internal image-reference" href="_images/Done.png"><img alt="_images/Done.png" class="align-center" src="_images/Done.png" style="width: 1420.0px; height: 734.4000000000001px;" /></a>
 <p>これで作業終了。あとは コード書く⇒ビルド⇒htmlの確認 を繰り返してドキュメントを書いていく。</p>
+<p>htmlのソースが表示されてしまう場合は、html上で右クリックし、Open withでWeb Browserから開こう。</p>
+<p>もしReSTエディターで一部文字化けが発生する場合、Window-&gt;Prederences-&gt;General-&gt;Apearance-&gt;Colors and FontsでFontを変更する。</p>
+<a class="reference internal image-reference" href="_images/MSGosic.png"><img alt="_images/MSGosic.png" class="align-center" src="_images/MSGosic.png" style="width: 762.0px; height: 651.0px;" /></a>
+</div>
+<div class="section" id="github">
+<h2>8. GitHubで作成したドキュメントを公開<a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h2>
+<p>GitHubの使い方はまたいつか詳しく説明しようと思う。
+とりあえず今回は公開の仕方のみ説明。</p>
+<p>実際に私が公開しているGitHubのページを使って説明する。リンク（<a class="reference external" href="https://github.com/MarkInada/DocSphinxHowTo">https://github.com/MarkInada/DocSphinxHowTo</a>）</p>
+<p>まずbuild/htmlディレクトリをコピーし、ディレクトリ名を”docs”にする。docs内に”.nojekyll”という中身のないファイルを作る。</p>
+<p>完了したらこのdocsディレクトリをリポジトリのプロジェクトルートにプッシュする。次にGitHubプロジェクトのSettingに行く。</p>
+<a class="reference internal image-reference" href="_images/GitHub1.png"><img alt="_images/GitHub1.png" class="align-center" src="_images/GitHub1.png" style="width: 995.0px; height: 624.0px;" /></a>
+<p>Sourceで master branch /docs folder を選択し、Saveすると docs/index.html が公開される。</p>
+<a class="reference internal image-reference" href="_images/GitHub2.png"><img alt="_images/GitHub2.png" class="align-center" src="_images/GitHub2.png" style="width: 764.0px; height: 405.0px;" /></a>
+<p>公開先のアドレスは、<a class="reference external" href="https:/">https:/</a>/[ユーザー名].github.io/[リポジトリ名]/</p>
+<p>README.md にURLを記載しておくと、以下のように表示され、便利である。</p>
+<a class="reference internal image-reference" href="_images/GitHub3.png"><img alt="_images/GitHub3.png" class="align-center" src="_images/GitHub3.png" style="width: 557.0px; height: 544.0px;" /></a>
 </div>
 <div class="section" id="id9">
 <h2>引用した資料たち<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
@@ -340,6 +359,7 @@ Eclipseのインストール⇒リンク （初期設定までは行おう。）
 <p>・Sphinx再入門 (<a class="reference external" href="http://muraoka-edo.hatenablog.com/entry/2015/01/18/171522">http://muraoka-edo.hatenablog.com/entry/2015/01/18/171522</a>)</p>
 <p>・sphinx_rtd_theme をカスタマイズする (<a class="reference external" href="http://kuttsun.blogspot.com/2016/11/sphinx-sphinxrtdtheme.html">http://kuttsun.blogspot.com/2016/11/sphinx-sphinxrtdtheme.html</a>)</p>
 <p>・blockdiag (<a class="reference external" href="http://blockdiag.com/ja/blockdiag/introduction.html">http://blockdiag.com/ja/blockdiag/introduction.html</a>)</p>
+<p>・GitHub Pagesで自分の作ったサイトを公開する (<a class="reference external" href="https://qiita.com/nagisa88/items/91c4f57c784842f365d7">https://qiita.com/nagisa88/items/91c4f57c784842f365d7</a>)</p>
 </div>
 </div>
 

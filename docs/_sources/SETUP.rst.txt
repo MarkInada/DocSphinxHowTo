@@ -79,7 +79,7 @@ Pythonがインストールできたら、次はSphinxをインストールす�
 =================
 この時点で、テキストエディタとコマンドプロンプトでSphinxのドキュメント作成を行うことは可能。
 しかし、もう少し我慢して一手間かけて統合開発環境 Eclipseで快適な環境にしよう。
-Eclipseのインストール⇒リンク （初期設定までは行おう。）
+Eclipseのインストールして初期設定までは行おう⇒手順リンク(https://github.com/MarkInada/DocEclipseHowTo)
 
 
 4. Eclipseの設定
@@ -113,7 +113,30 @@ Help -> Eclipse Marketplaceから"PyDev"を検索し、インストールする�
 5. Buildしてhtml生成
 ================
 
-5-1. ビルド設定
+5-1. Sphinxプロジェクトの読み込み
+----------------------
+File -> New -> Other から、以下のようにプロジェクトを読み込む
+
+.. image:: _static/pic/New1.png
+   :scale: 100%
+   :align: center
+
+.. image:: _static/pic/New2.png
+   :scale: 100%
+   :align: center
+
+.. image:: _static/pic/New3.png
+   :scale: 100%
+   :align: center
+
+最後にconf.pyとindex.rstをsourceディレクトリ内に移動し、上書きする。
+※注意！！　すでにsourceディレクトリにconf.pyとindex.rstがある状態で読み込みをこれらが初期化されてしまいます！
+
+.. image:: _static/pic/ChangeSouce.png
+   :scale: 100%
+   :align: center
+   
+5-2. ビルド設定
 ----------
 Run -> Run Configurationsを開き、"Sphinx (via make file)"から"new configuration"を選択し、下記のように入力する。
 
@@ -131,27 +154,6 @@ Run -> Run Configurationsを開き、"Sphinx (via make file)"から"new configur
    :scale: 100%
    :align: center
 
-5-2. Sphinxプロジェクトの読み込み
-----------------------
-File -> New -> Other から、以下のようにプロジェクトを読み込む
-
-.. image:: _static/pic/New1.png
-   :scale: 100%
-   :align: center
-
-.. image:: _static/pic/New2.png
-   :scale: 100%
-   :align: center
-
-.. image:: _static/pic/New3.png
-   :scale: 100%
-   :align: center
-
-最後にconf.pyとindex.rstをsourceディレクトリ内に移動し、上書きする。
-
-.. image:: _static/pic/ChangeSouce.png
-   :scale: 100%
-   :align: center
 
 5-3. ビルドしてみる
 ------------
@@ -259,6 +261,45 @@ Run(ビルド)してhtmlファイルを開くと・・・・。
 
 これで作業終了。あとは コード書く⇒ビルド⇒htmlの確認 を繰り返してドキュメントを書いていく。
 
+htmlのソースが表示されてしまう場合は、html上で右クリックし、Open withでWeb Browserから開こう。
+
+もしReSTエディターで一部文字化けが発生する場合、Window->Prederences->General->Apearance->Colors and FontsでFontを変更する。
+
+.. image:: _static/pic/MSGosic.png
+   :scale: 100%
+   :align: center
+
+
+8. GitHubで作成したドキュメントを公開
+=======================
+GitHubの使い方はまたいつか詳しく説明しようと思う。
+とりあえず今回は公開の仕方のみ説明。
+
+実際に私が公開しているGitHubのページを使って説明する。リンク（https://github.com/MarkInada/DocSphinxHowTo）
+
+まずbuild/htmlディレクトリをコピーし、ディレクトリ名を"docs"にする。docs内に".nojekyll"という中身のないファイルを作る。
+
+完了したらこのdocsディレクトリをリポジトリのプロジェクトルートにプッシュする。次にGitHubプロジェクトのSettingに行く。
+
+.. image:: _static/pic/GitHub1.png
+   :scale: 100%
+   :align: center
+
+Sourceで master branch /docs folder を選択し、Saveすると docs/index.html が公開される。
+
+.. image:: _static/pic/GitHub2.png
+   :scale: 100%
+   :align: center
+
+公開先のアドレスは、https://[ユーザー名].github.io/[リポジトリ名]/
+
+README.md にURLを記載しておくと、以下のように表示され、便利である。
+
+.. image:: _static/pic/GitHub3.png
+   :scale: 100%
+   :align: center
+   
+
 引用した資料たち
 ========
 ・Sphinxをはじめよう (http://sphinx-users.jp/gettingstarted/)
@@ -272,3 +313,5 @@ Run(ビルド)してhtmlファイルを開くと・・・・。
 ・sphinx_rtd_theme をカスタマイズする (http://kuttsun.blogspot.com/2016/11/sphinx-sphinxrtdtheme.html)
 
 ・blockdiag (http://blockdiag.com/ja/blockdiag/introduction.html)
+
+・GitHub Pagesで自分の作ったサイトを公開する (https://qiita.com/nagisa88/items/91c4f57c784842f365d7)
