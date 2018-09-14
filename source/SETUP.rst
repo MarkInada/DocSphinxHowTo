@@ -79,7 +79,7 @@ Pythonがインストールできたら、次はSphinxをインストールす�
 =================
 この時点で、テキストエディタとコマンドプロンプトでSphinxのドキュメント作成を行うことは可能。
 しかし、もう少し我慢して一手間かけて統合開発環境 Eclipseで快適な環境にしよう。
-Eclipseのインストールして初期設定までは行おう⇒手順リンク(https://github.com/MarkInada/DocEclipseHowTo)
+Eclipseのインストールして初期設定までは行おう⇒手順リンク(https://markinada.github.io/DocEclipseHowTo/)
 
 
 4. Eclipseの設定
@@ -171,6 +171,8 @@ Consoleでビルドができたことを確認。
    :align: center
 
 buildディレクトリ内のhtmlディレクトリ内に生成されたhtmlファイルが格納される。
+
+htmlのソースが表示されてしまう場合は、html上で右クリックし、Open withでWeb Browserから開こう。
 
 .. image:: _static/pic/Complete.png
    :scale: 100%
